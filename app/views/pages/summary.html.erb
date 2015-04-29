@@ -1,0 +1,143 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
+<h1>Current Financial Situation</h1>
+
+<table class="table table-hover table-responsive">
+ <tr>
+      <th></th>
+      <th>Prior Year</th>
+      <th>Current Year YTD</th>
+      <th></th>
+    </tr>
+  <tbody>
+  <tr>
+    <td><h3>Net Assets: $<%= @cashes.sum(:value) + @moneyowings.sum(:value) + @termdeposits.sum(:value) + @shareportfolios.sum(:value) + @properties.sum(:value) + @businessinvestments.sum(:value) -@vendorfinances.sum(:value) - @mortgages.sum(:value) %></h3></td>
+    <td></td>
+    <td></td>
+   
+  </tr>
+  <tr>
+    <td> <h4>Assets: $<%= @cashes.sum(:value) + @moneyowings.sum(:value) + @termdeposits.sum(:value) + @shareportfolios.sum(:value) + @properties.sum(:value) + @businessinvestments.sum(:value) %></h4></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+   <tr>
+   		<td><h5>Cash: $<%= @cashes.sum(:value) %></h5></td>
+      <td></td>
+      <td></td>
+   		<td><h5><%= link_to 'View Detail', cashes_path %></h5></td>
+  </tr>
+
+ 
+
+  <tr>
+  	<td><h5>Term Deposits: $<%= @termdeposits.sum(:value) %></h5></td> 
+    <td></td>
+    <td></td>
+  	<td><h5><%= link_to 'View Detail', termdeposits_path %></h5></td>
+  </tr>
+
+  <tr>
+  	<td><h5>Investment Portfolio: $<%= @shareportfolios.sum(:value) %></h5></td>
+    <td></td>
+    <td></td>
+  	<td><h5><%= link_to 'View Detail', shareportfolios_path %></h5></td>
+  </tr>
+
+ 
+
+  <tr>
+  	<td><h5>Properties: $<%= @properties.sum(:value) %></h5></td>
+    <td></td>
+    <td></td>
+  	<td><h5><%= link_to 'View Detail', properties_path %></h5></td>
+  </tr>
+
+ 
+
+  <tr>
+  	<td><h5>Business Investments: $<%= @businessinvestments.sum(:value) %></h5></td> 
+    <td></td>
+      <td></td>
+  	<td><h5><%= link_to 'View Detail', businessinvestments_path %></h5></td>
+  </tr>
+
+  <tr>
+    <td><h5>Loans: $<%= @moneyowings.sum(:value) %></h5></td> 
+    <td></td>
+    <td></td>
+    <td><h5><%= link_to 'View Detail', moneyowings_path %></h5></td>
+  </tr>
+
+  <tr>
+    <td><h5>Other: $0</h5></td> 
+    <td></td>
+    <td></td>
+    <td>View Details</td>
+  </tr>
+
+  <tr>
+    <td><h3>Total:</h3></td> 
+    <td></td>
+    <td> <h3>$<%= @cashes.sum(:value) + @moneyowings.sum(:value) + @termdeposits.sum(:value) + @shareportfolios.sum(:value) + @properties.sum(:value) + @businessinvestments.sum(:value) %></h3></td>
+    <td></td>
+  </tr>
+
+  </tbody>
+</table>
+</br>
+
+<table class="table table-hover table-responsive">
+<tr>
+      <th></th>
+      <th>Prior Year</th>
+      <th>Current Year YTD</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  <tbody>
+  <tr>
+    <td><h4>Liabilities: $<%= @vendorfinances.sum(:value) + @mortgages.sum(:value) %></h4></td>
+  </tr>
+   <tr>
+      <td><h5>Credit Cards: $0</h5></td>
+       <td></td>
+    <td></td>
+      <td><h5>View Details</h5></td>
+  </tr>
+
+   <tr>
+      <td><h5>Vendor Finance: $<%= @vendorfinances.sum(:value) %></h5></td>
+       <td></td>
+    <td></td>
+      <td><h5><%= link_to 'View Details', vendorfinances_path %></h5></td>
+  </tr>
+
+  <tr>
+    <td><h5>Mortgage: $<%= @mortgages.sum(:value) %></h5></td> 
+     <td></td>
+    <td></td>
+    <td><h5><%= link_to 'View Details', mortgages_path %></h5></td>
+  </tr>
+
+   <tr>
+    <td><h5>Other: $0</h5></td> 
+     <td></td>
+    <td></td>
+    <td><h5>View Details</h5></td>
+  </tr>
+
+   <tr>
+    <td><h3>Total:</h3></td> 
+    <td></td>
+    <td> <h3>$ <%= -@vendorfinances.sum(:value) - @mortgages.sum(:value) %></h3></td>
+    <td></td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+
+

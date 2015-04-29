@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Current Assets</h1>
+
+<table class="table table-hover table-responsive">
+
+  <thead>
+    <tr>
+      <th>Assets</th>
+      <th>Tax Entity</th>
+      <th>Details</th>
+      <th>Prior Year</th>
+      <th>Current YTD</th>
+      <th>Bank Name</th>
+      <th>Account #</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+    <tr>
+    	<td>Term Deposit</td>
+        <td><%= @termdeposit.description %></td>
+        <td></td>
+        <td><%= @termdeposit.value %></td>
+        <td><%= @termdeposit.value %></td>
+        <td>ANZ</td>
+        <td>1234</td>
+    </tr>
+    <tr>
+    <td><%= link_to 'Back', termdeposits_path %>  </td>
+    <td></td>
+    <td></td>
+    <td></td>
+   	<td></td>
+   	<td></td>
+   	<td><%= link_to 'Edit', edit_termdeposit_path(@termdeposit) %>  </td>
+    </tr>
+  </tbody>
+</table>

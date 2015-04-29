@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  money: MyString
+  money_owing: MyString
+  term_deposit: MyString
+  share_portfolio: MyString
+  property: MyString
+  bus_investment: MyString
+  vendor_finance: MyString
+  mortgage: MyString
+  details: MyString
+  amount: 1
+
+two:
+  money: MyString
+  money_owing: MyString
+  term_deposit: MyString
+  share_portfolio: MyString
+  property: MyString
+  bus_investment: MyString
+  vendor_finance: MyString
+  mortgage: MyString
+  details: MyString
+  amount: 1

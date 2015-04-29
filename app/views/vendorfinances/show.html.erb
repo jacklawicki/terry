@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @vendorfinance.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @vendorfinance.value %>
+</p>
+
+<%= link_to 'Edit', edit_vendorfinance_path(@vendorfinance) %> |
+<%= link_to 'Back', vendorfinances_path %>

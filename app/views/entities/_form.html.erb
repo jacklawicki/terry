@@ -1,0 +1,57 @@
+<%= form_for(@entity) do |f| %>
+  <% if @entity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
+
+      <ul>
+      <% @entity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :money %><br>
+    <%= f.text_field :money %>
+  </div>
+  <div class="field">
+    <%= f.label :money_owing %><br>
+    <%= f.text_field :money_owing %>
+  </div>
+  <div class="field">
+    <%= f.label :term_deposit %><br>
+    <%= f.text_field :term_deposit %>
+  </div>
+  <div class="field">
+    <%= f.label :share_portfolio %><br>
+    <%= f.text_field :share_portfolio %>
+  </div>
+  <div class="field">
+    <%= f.label :property %><br>
+    <%= f.text_field :property %>
+  </div>
+  <div class="field">
+    <%= f.label :bus_investment %><br>
+    <%= f.text_field :bus_investment %>
+  </div>
+  <div class="field">
+    <%= f.label :vendor_finance %><br>
+    <%= f.text_field :vendor_finance %>
+  </div>
+  <div class="field">
+    <%= f.label :mortgage %><br>
+    <%= f.text_field :mortgage %>
+  </div>
+  <div class="field">
+    <%= f.label :details %><br>
+    <%= f.text_field :details %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

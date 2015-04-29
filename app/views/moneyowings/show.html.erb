@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @moneyowing.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @moneyowing.value %>
+</p>
+
+<%= link_to 'Edit', edit_moneyowing_path(@moneyowing) %> |
+<%= link_to 'Back', moneyowings_path %>

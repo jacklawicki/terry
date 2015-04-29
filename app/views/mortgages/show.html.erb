@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mortgage.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @mortgage.value %>
+</p>
+
+<%= link_to 'Edit', edit_mortgage_path(@mortgage) %> |
+<%= link_to 'Back', mortgages_path %>

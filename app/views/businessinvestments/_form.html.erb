@@ -1,0 +1,33 @@
+<%= form_for(@businessinvestment) do |f| %>
+  <% if @businessinvestment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@businessinvestment.errors.count, "error") %> prohibited this businessinvestment from being saved:</h2>
+
+      <ul>
+      <% @businessinvestment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <table class="table table-hover table-responsive">
+
+  <thead>
+  <td><h2>Add Business Investment</h2></td> 
+    <tr>
+      <th>Business Investment Description</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= f.text_field :description %></td>
+        <td>$<%= f.number_field :value %></td>
+        <td><div class="actions"><%= f.submit "Create Business Investment" %></td>
+      </tr>
+  </tbody>
+</table> 
+<% end %>

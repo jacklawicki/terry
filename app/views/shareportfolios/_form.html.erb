@@ -1,0 +1,33 @@
+<%= form_for(@shareportfolio) do |f| %>
+  <% if @shareportfolio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shareportfolio.errors.count, "error") %> prohibited this shareportfolio from being saved:</h2>
+
+      <ul>
+      <% @shareportfolio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <table class="table table-hover table-responsive">
+
+  <thead>
+  <td><h2>Add Investment Portfolio</h2></td> 
+    <tr>
+      <th>Investment Portfolio Description</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= f.text_field :description %></td>
+        <td>$<%= f.number_field :value %></td>
+        <td><div class="actions"><%= f.submit "Create Investment Portfolio" %></td>
+      </tr>
+  </tbody>
+</table> 
+<% end %>

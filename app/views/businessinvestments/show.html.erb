@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @businessinvestment.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @businessinvestment.value %>
+</p>
+
+<%= link_to 'Edit', edit_businessinvestment_path(@businessinvestment) %> |
+<%= link_to 'Back', businessinvestments_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shareportfolio.description %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @shareportfolio.value %>
+</p>
+
+<%= link_to 'Edit', edit_shareportfolio_path(@shareportfolio) %> |
+<%= link_to 'Back', shareportfolios_path %>

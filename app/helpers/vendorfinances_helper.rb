@@ -1,0 +1,2 @@
+module VendorfinancesHelper
+end

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Current Assets</h1>
+
+<table class="table table-hover table-responsive">
+
+  <thead>
+  <td><h2>Investment Portfolio: $<%= @shareportfolios.sum(:value) %></h2></td>
+  <tr>
+      <th>Tax Entity</th>
+      <th>Prior Year</th>
+      <th>Current YTD</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+  <tbody>
+
+<% @shareportfolios.each do |shareportfolio| %>
+      <tr>
+        <td><%= shareportfolio.description %></td>
+        <td><%= shareportfolio.value %></td>
+        <td><%= shareportfolio.value %></td>
+        <td><%= link_to 'View Detail', shareportfolio %></td>
+        
+      </tr>
+    <% end %>
+    <tr>
+        <td><strong>Total</strong></td>
+        <td> <strong>$<%= @shareportfolios.sum(:value) %></strong></td>
+        <td><strong>$<%= @shareportfolios.sum(:value) %></strong></td>
+        <td></td>
+      </tr>
+    
+     <tr>
+      <td><%= link_to 'Back', summary_path %> </td>
+      <td></td>
+      <td></td>
+      <td><%= link_to '+ New Investment Portfolio', new_shareportfolio_path %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
+
